@@ -1,12 +1,16 @@
-import React from "react";
+import React from 'react'
 
-import { Footer } from "@/components/universal";
+import { Footer } from '@/components/universal'
 
 const HomeScreen = () => (
   <>
-    <div className="screen-container">Data Viz!</div>
+    <div className='screen-container'>
+      <ul>
+        <li>Line chart</li>
+      </ul>
+    </div>
     <Footer />
   </>
-);
+)
 
-export default HomeScreen;
+export default HomeScreen

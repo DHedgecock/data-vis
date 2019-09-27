@@ -8,6 +8,7 @@ import Header from "./Header/Header";
 
 // Screens
 import HomeScreen from "../HomeScreen/HomeScreen";
+import LineChartScreen from "../LineChartScreen/LineChartScreen";
 
 /**
  * Application class component is responsible for setting the base application
@@ -21,6 +22,9 @@ const App = () => (
       <Switch>
         <Route path="/" exact>
           <HomeScreen />
+        </Route>
+        <Route path="/line-chart">
+          <LineChartScreen />
         </Route>
       </Switch>
 
