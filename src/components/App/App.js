@@ -1,15 +1,13 @@
-import React from 'react'
-import { hot } from 'react-hot-loader/root'
-import { Switch, Route } from 'react-router-dom'
+import React from "react";
+import { hot } from "react-hot-loader/root";
+import { Switch, Route } from "react-router-dom";
 
 // Application
-import { ScrollToTop } from '@/components/universal'
-import Header from './Header/Header'
+import { ScrollToTop } from "@/components/universal";
+import Header from "./Header/Header";
 
 // Screens
-import HomeScreen from '../HomeScreen/HomeScreen'
-import BestPracticesScreen from '../BestPracticesScreen/BestPracticesScreen'
-import FourOhFourScreen from '../FourOhFourScreen/FourOhFourScreen'
+import HomeScreen from "../HomeScreen/HomeScreen";
 
 /**
  * Application class component is responsible for setting the base application
@@ -18,17 +16,11 @@ import FourOhFourScreen from '../FourOhFourScreen/FourOhFourScreen'
 const App = () => (
   <>
     {/* Base container element with flexbox layout for sticky footers */}
-    <div className='app-container'>
+    <div className="app-container">
       <Header />
       <Switch>
-        <Route path='/' exact>
+        <Route path="/" exact>
           <HomeScreen />
-        </Route>
-        <Route path='/best-practices'>
-          <BestPracticesScreen />
-        </Route>
-        <Route>
-          <FourOhFourScreen />
         </Route>
       </Switch>
 
@@ -36,6 +28,6 @@ const App = () => (
       <ScrollToTop />
     </div>
   </>
-)
+);
 
-export default hot(App)
+export default hot(App);
