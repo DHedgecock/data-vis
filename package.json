@@ -1,0 +1,84 @@
+{
+  "name": "@crystal-ball/react-app-prototype",
+  "version": "0.0.0",
+  "description": "Prototypical React application",
+  "keywords": [
+    "prototype",
+    "react"
+  ],
+  "contributors": [
+    "Dan Hedgecock <hedgecock.d@gmail.com> (https://danhedgecock.com)"
+  ],
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crystal-ball/react-app-prototype.git"
+  },
+  "scripts": {
+    "start": "NODE_ENV=development webpack-dev-server --mode=development",
+    "start:docker": "NODE_ENV=development webpack-dev-server --host=0.0.0.0 --mode=development",
+    "storybook": "start-storybook -p 6006 --ci",
+    "build": "NODE_ENV=production webpack --mode=production",
+    "test": "npm run test:lint && npm run test:unit",
+    "test:lint": "NODE_ENV=test eslint --format=pretty .storybook cypress src test",
+    "test:unit": "NODE_ENV=test jest",
+    "test:watch": "NODE_ENV=test jest --watch",
+    "test:acceptance": "docker-compose up --exit-code-from cypress --abort-on-container-exit",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "postinstall": "bash ./scripts/post-install.sh",
+    "format": "prettier --write '*.{js,json,md,json}' '**/*.{md,js,json,scss}'"
+  },
+  "dependencies": {
+    "@babel/runtime": "7.6.2",
+    "@babel/runtime-corejs3": "7.6.2",
+    "@emotion/core": "10.0.17",
+    "@hot-loader/react-dom": "16.9.0",
+    "classnames": "2.2.6",
+    "componentry": "3.0.0-alpha.12",
+    "emotion-theming": "10.0.19",
+    "feather-icons": "4.24.1",
+    "nanoid": "2.1.1",
+    "prop-types": "15.7.2",
+    "react": "16.9.0",
+    "react-hot-loader": "4.12.14",
+    "react-redux": "7.1.1",
+    "react-router-dom": "5.1.0",
+    "redux": "4.0.4",
+    "redux-saga": "1.1.1",
+    "redux-thunk": "2.3.0",
+    "svg-symbol-sprite-loader": "3.2.0"
+  },
+  "devDependencies": {
+    "@crystal-ball/commitizen-adapter": "1.4.0",
+    "@crystal-ball/prettier-base": "1.5.0",
+    "@crystal-ball/webpack-base": "6.1.0",
+    "@emotion/babel-preset-css-prop": "10.0.17",
+    "@storybook/addon-actions": "5.2.1",
+    "@storybook/addon-docs": "~5.2.1",
+    "@storybook/addon-knobs": "5.2.1",
+    "@storybook/addon-links": "5.2.1",
+    "@storybook/react": "5.2.1",
+    "@storybook/theming": "5.2.1",
+    "@testing-library/jest-dom": "4.1.0",
+    "@testing-library/react": "9.1.4",
+    "@types/jest": "24.0.18",
+    "babel-plugin-emotion": "10.0.19",
+    "eslint-config-eloquence": "12.4.0",
+    "husky": "3.0.5",
+    "jest": "24.9.0",
+    "jest-emotion": "10.0.17",
+    "redux-devtools-extension": "2.13.8"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@crystal-ball/commitizen-adapter"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook"
+    }
+  },
+  "prettier": "@crystal-ball/prettier-base"
+}

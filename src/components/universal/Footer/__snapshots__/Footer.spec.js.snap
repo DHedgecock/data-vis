@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> Footer snapshot 1`] = `
+.emotion-0 {
+  margin-top: auto;
+  padding: 15px 30px;
+  background: #636c72;
+}
+
+.emotion-0 .icon-heart {
+  color: #fcc4dd;
+}
+
+<footer
+  class="d-flex align-items-center justify-content-center emotion-0"
+>
+  <p
+    class="text-white"
+    style="margin-bottom: 0px;"
+  >
+    <svg
+      class="icon icon-heart font"
+      data-testid="heart"
+      role="img"
+    >
+      <use
+        href="#heart"
+        xlink:href="#heart"
+      />
+    </svg>
+    Make something awesome!
+  </p>
+</footer>
+`;
